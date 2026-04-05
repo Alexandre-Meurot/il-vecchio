@@ -1,0 +1,114 @@
+/* ============================================
+   Classes utilitaires réutilisables
+   ============================================ */
+
+/* Conteneur principal centré */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Conteneur étroit (texte long) */
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+/* Espacement de section */
+.section {
+  padding-block: var(--space-section);
+}
+
+/* Fond alterné */
+.section--alt {
+  background-color: var(--color-bg-section);
+}
+
+/* Titre de section */
+.section__title {
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+/* Sous-titre de section */
+.section__subtitle {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+}
+
+/* Séparateur décoratif */
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: var(--space-md) auto;
+  border: none;
+}
+
+/* Bouton principal */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Bouton CTA (orange chaud) */
+.btn--primary {
+  background-color: var(--color-accent-warm);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-accent-warm-hover);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* Bouton secondaire (contour) */
+.btn--outline {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg-dark);
+  }
+}
+
+/* Masquer visuellement (accessibilité) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

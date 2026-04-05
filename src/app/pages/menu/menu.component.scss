@@ -1,0 +1,120 @@
+/* En-tête de page */
+.page-header {
+  padding-top: calc(var(--space-2xl) + 60px);
+  padding-bottom: var(--space-lg);
+  text-align: center;
+  background-color: var(--color-bg-dark);
+
+  &__badge {
+    display: inline-block;
+    font-family: var(--font-accent);
+    font-size: var(--fs-small);
+    font-style: italic;
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__title {
+    font-size: var(--fs-h1);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__subtitle {
+    font-size: var(--fs-body);
+    color: var(--color-text-muted);
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* Catégorie de menu */
+.menu-category {
+  &__header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__title {
+    font-size: var(--fs-h2);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__desc {
+    font-family: var(--font-accent);
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: var(--fs-body);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Carte pizza */
+.pizza-card {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-light);
+  }
+
+  &__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__name {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-light);
+  }
+
+  &__price {
+    font-family: var(--font-heading);
+    font-size: var(--fs-price);
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  &__ingredients {
+    font-size: var(--fs-small);
+    color: var(--color-text-muted);
+    line-height: var(--lh-relaxed);
+  }
+}
+
+/* Note allergènes */
+.menu-note {
+  padding-block: var(--space-lg);
+
+  &__text {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    font-style: italic;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}

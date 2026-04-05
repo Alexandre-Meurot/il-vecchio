@@ -1,0 +1,41 @@
+<!-- En-tête de page -->
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">{{ texts.title }}</h1>
+    <p class="page-header__subtitle">{{ texts.subtitle }}</p>
+    <hr class="divider">
+  </div>
+</section>
+
+<!-- Histoire -->
+<section class="story section">
+  <div class="container">
+    <div class="story__layout">
+      <div class="story__image-wrapper">
+        <div class="story__image" role="img" aria-label="Préparation de pizza au feu de bois"></div>
+      </div>
+      <div class="story__content">
+        <h2 class="story__title">{{ texts.storyTitle }}</h2>
+        @for (paragraph of texts.storyText; track $index) {
+          <p class="story__text">{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Valeurs -->
+<section class="values section section--alt">
+  <div class="container">
+    <h2 class="section__title">{{ texts.valuesTitle }}</h2>
+    <hr class="divider">
+    <div class="values__grid">
+      @for (value of texts.values; track value.title) {
+        <div class="values__card">
+          <h3 class="values__card-title">{{ value.title }}</h3>
+          <p class="values__card-text">{{ value.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

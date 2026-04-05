@@ -1,0 +1,63 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="header__inner container">
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" (click)="closeMenu()">
+      {{ siteName }}
+    </a>
+
+    <!-- Navigation desktop -->
+    <nav class="header__nav" aria-label="Navigation principale">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        {{ texts.home }}
+      </a>
+      <a routerLink="/la-carte" routerLinkActive="active">
+        {{ texts.menu }}
+      </a>
+      <a routerLink="/notre-histoire" routerLinkActive="active">
+        {{ texts.about }}
+      </a>
+      <a routerLink="/contact" routerLinkActive="active">
+        {{ texts.contact }}
+      </a>
+    </nav>
+
+    <!-- CTA téléphone -->
+    <a [href]="'tel:' + phone" class="header__cta btn btn--primary">
+      {{ texts.cta }}
+    </a>
+
+    <!-- Bouton hamburger mobile -->
+    <button
+      class="header__burger"
+      [class.header__burger--open]="menuOpen()"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Menu de navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="header__mobile" [class.header__mobile--open]="menuOpen()">
+    <nav class="header__mobile-nav" aria-label="Navigation mobile">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+        {{ texts.home }}
+      </a>
+      <a routerLink="/la-carte" routerLinkActive="active" (click)="closeMenu()">
+        {{ texts.menu }}
+      </a>
+      <a routerLink="/notre-histoire" routerLinkActive="active" (click)="closeMenu()">
+        {{ texts.about }}
+      </a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+        {{ texts.contact }}
+      </a>
+      <a [href]="'tel:' + phone" class="header__mobile-cta btn btn--primary" (click)="closeMenu()">
+        {{ phoneDisplay }}
+      </a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,99 @@
+/* ============================================
+   THÈME IL VECCHIO — Variables globales
+   ============================================
+   Ce fichier centralise toutes les couleurs,
+   typographies et espacements du site.
+   Modifier ces variables pour changer l'apparence
+   globale sans toucher aux composants.
+   ============================================ */
+
+:root {
+  /* --- Couleurs principales --- */
+  --color-primary: #D4A853;          /* Or chaud — accent principal */
+  --color-primary-light: #E8C97A;    /* Or clair — survol et variantes */
+  --color-primary-dark: #B8892E;     /* Or foncé — états actifs */
+
+  /* --- Couleurs de fond --- */
+  --color-bg-dark: #0D0D0D;          /* Fond principal — noir profond */
+  --color-bg-section: #1A1A1A;       /* Fond des sections alternées */
+  --color-bg-card: #222222;          /* Fond des cartes et encarts */
+  --color-bg-overlay: rgba(0, 0, 0, 0.65); /* Superposition sur images */
+
+  /* --- Couleurs de texte --- */
+  --color-text-light: #F5F0E8;       /* Texte principal sur fond sombre */
+  --color-text-muted: #A89F91;       /* Texte secondaire / atténué */
+  --color-text-dark: #1A1A1A;        /* Texte sur fond clair */
+
+  /* --- Couleurs d'accentuation --- */
+  --color-accent-warm: #E8813B;      /* Orange chaud — boutons CTA */
+  --color-accent-warm-hover: #F09550;/* Orange clair — survol CTA */
+  --color-accent-red: #C0392B;       /* Rouge — base tomate (menu) */
+  --color-accent-cream: #FFF8E7;     /* Crème — base crème (menu) */
+
+  /* --- Couleurs utilitaires --- */
+  --color-border: #333333;           /* Bordures et séparateurs */
+  --color-border-light: #444444;     /* Bordures plus claires */
+  --color-success: #27AE60;          /* Succès / confirmation */
+  --color-white: #FFFFFF;            /* Blanc pur */
+
+  /* --- Typographie --- */
+  --font-heading: 'Playfair Display', serif;  /* Titres — élégant */
+  --font-body: 'Inter', sans-serif;           /* Corps — lisible */
+  --font-accent: 'Cormorant Garamond', serif; /* Accents décoratifs */
+
+  /* Tailles de police — échelle fluide */
+  --fs-hero: clamp(2.8rem, 6vw, 5rem);       /* Titre héro */
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);         /* Titre principal */
+  --fs-h2: clamp(1.6rem, 3vw, 2.4rem);       /* Sous-titre */
+  --fs-h3: clamp(1.2rem, 2vw, 1.6rem);       /* Titre de section */
+  --fs-body: clamp(0.95rem, 1.2vw, 1.1rem);  /* Texte courant */
+  --fs-small: clamp(0.8rem, 1vw, 0.9rem);    /* Texte petit */
+  --fs-price: clamp(1rem, 1.5vw, 1.2rem);    /* Prix menu */
+
+  /* Épaisseurs de police */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Hauteurs de ligne */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.8;
+
+  /* --- Espacements --- */
+  --space-xs: 0.5rem;      /* 8px */
+  --space-sm: 1rem;         /* 16px */
+  --space-md: 1.5rem;       /* 24px */
+  --space-lg: 2.5rem;       /* 40px */
+  --space-xl: 4rem;         /* 64px */
+  --space-2xl: 6rem;        /* 96px */
+  --space-section: clamp(4rem, 8vw, 8rem); /* Espacement entre sections */
+
+  /* --- Mise en page --- */
+  --max-width: 1200px;            /* Largeur max du contenu */
+  --max-width-narrow: 800px;      /* Largeur max étroite */
+  --container-padding: clamp(1rem, 4vw, 2rem); /* Padding latéral */
+
+  /* --- Bordures et arrondis --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;     /* Pleinement arrondi */
+
+  /* --- Ombres --- */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-text: 0 2px 8px rgba(0, 0, 0, 0.6);
+
+  /* --- Transitions --- */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* --- Z-index — couches superposées --- */
+  --z-header: 1000;
+  --z-overlay: 900;
+  --z-modal: 1100;
+}

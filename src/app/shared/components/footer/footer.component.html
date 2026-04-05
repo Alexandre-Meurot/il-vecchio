@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="footer__inner container">
+    <!-- Logo & tagline -->
+    <div class="footer__brand">
+      <a routerLink="/" class="footer__logo">{{ config.name }}</a>
+      <p class="footer__tagline">{{ texts.tagline }}</p>
+    </div>
+
+    <!-- Navigation rapide -->
+    <nav class="footer__nav" aria-label="Navigation pied de page">
+      <h3 class="footer__nav-title">Navigation</h3>
+      <a routerLink="/">{{ nav.home }}</a>
+      <a routerLink="/la-carte">{{ nav.menu }}</a>
+      <a routerLink="/notre-histoire">{{ nav.about }}</a>
+      <a routerLink="/contact">{{ nav.contact }}</a>
+    </nav>
+
+    <!-- Coordonnées -->
+    <div class="footer__contact">
+      <h3 class="footer__nav-title">Contact</h3>
+      <a [href]="'tel:' + config.contact.phone" class="footer__phone">
+        {{ config.contact.phoneDisplay }}
+      </a>
+      <address class="footer__address">
+        {{ config.contact.address.street }}<br>
+        {{ config.contact.address.postalCode }} {{ config.contact.address.city }}
+      </address>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer__bottom">
+    <div class="container">
+      <p>{{ copyright }}</p>
+    </div>
+  </div>
+</footer>

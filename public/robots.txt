@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://il-vecchio.fr/sitemap.xml

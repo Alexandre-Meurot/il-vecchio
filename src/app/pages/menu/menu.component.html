@@ -1,0 +1,42 @@
+<!-- En-tête de page -->
+<section class="page-header">
+  <div class="container">
+    <span class="page-header__badge">{{ texts.badge }}</span>
+    <h1 class="page-header__title">{{ texts.title }}</h1>
+    <p class="page-header__subtitle">{{ texts.subtitle }}</p>
+    <hr class="divider">
+  </div>
+</section>
+
+<!-- Catégories de pizzas -->
+@for (category of categories; track category.id) {
+  <section class="menu-category section" [class.section--alt]="category.id === 'base-creme'" [id]="category.id">
+    <div class="container">
+      <div class="menu-category__header">
+        <h2 class="menu-category__title">{{ category.title }}</h2>
+        <p class="menu-category__desc">{{ category.description }}</p>
+      </div>
+
+      <div class="menu-category__grid">
+        @for (pizza of category.pizzas; track pizza.name) {
+          <article class="pizza-card">
+            <div class="pizza-card__top">
+              <h3 class="pizza-card__name">{{ pizza.name }}</h3>
+              <span class="pizza-card__price">{{ pizza.price }}{{ texts.priceUnit }}</span>
+            </div>
+            <p class="pizza-card__ingredients">
+              {{ pizza.ingredients.join(' · ') }}
+            </p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Note allergènes -->
+<section class="menu-note section">
+  <div class="container">
+    <p class="menu-note__text">{{ texts.note }}</p>
+  </div>
+</section>
