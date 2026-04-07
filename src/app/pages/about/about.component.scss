@@ -33,8 +33,22 @@
   }
 
   &__image-wrapper {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.45) 100%
+      );
+      pointer-events: none;
+    }
   }
 
   &__image {

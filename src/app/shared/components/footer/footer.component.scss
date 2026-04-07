@@ -86,10 +86,30 @@
     border-top: 1px solid var(--color-border);
     padding: var(--space-sm) 0;
 
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: var(--space-xs);
+      }
+    }
+
     p {
       color: var(--color-text-muted);
       font-size: var(--fs-small);
-      text-align: center;
+    }
+  }
+
+  &__legal {
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-primary);
     }
   }
 }

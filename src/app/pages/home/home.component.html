@@ -2,11 +2,11 @@
 <section class="hero">
   <div class="hero__overlay"></div>
   <div class="hero__content container">
-    <span class="hero__badge">Pizza artisanale au feu de bois</span>
-    <h1 class="hero__title">{{ texts.heroTitle }}</h1>
-    <p class="hero__subtitle">{{ texts.heroSubtitle }}</p>
-    <div class="hero__actions">
-      <a routerLink="/la-carte" class="btn btn--primary">{{ texts.heroCta }}</a>
+    <span class="hero__badge" appReveal="fade" [revealDelay]="200">Pizza artisanale au feu de bois</span>
+    <h1 class="hero__title" appReveal="fade-up" [revealDelay]="400">{{ texts.heroTitle }}</h1>
+    <p class="hero__subtitle" appReveal="fade-up" [revealDelay]="600">{{ texts.heroSubtitle }}</p>
+    <div class="hero__actions" appReveal="fade-up" [revealDelay]="800">
+      <a routerLink="/la-carte" class="btn btn--primary pulse-soft">{{ texts.heroCta }}</a>
       <a [href]="'tel:' + phone" class="btn btn--outline">{{ texts.heroSecondary }}</a>
     </div>
   </div>
@@ -18,20 +18,24 @@
 <!-- Introduction -->
 <section class="intro section">
   <div class="container container--narrow">
-    <h2 class="section__title">{{ texts.introTitle }}</h2>
-    <hr class="divider">
-    <p class="intro__text">{{ texts.introText }}</p>
+    <h2 class="section__title" appReveal="fade-up">{{ texts.introTitle }}</h2>
+    <div appReveal="fade-up" [revealDelay]="150">
+      <hr class="divider-animated">
+    </div>
+    <p class="intro__text" appReveal="fade-up" [revealDelay]="300">{{ texts.introText }}</p>
   </div>
 </section>
 
 <!-- Engagements -->
 <section class="highlights section section--alt">
   <div class="container">
-    <h2 class="section__title">{{ texts.highlightsTitle }}</h2>
-    <hr class="divider">
+    <h2 class="section__title" appReveal="fade-up">{{ texts.highlightsTitle }}</h2>
+    <div appReveal="fade-up" [revealDelay]="150">
+      <hr class="divider-animated">
+    </div>
     <div class="highlights__grid">
-      @for (item of texts.highlights; track item.title) {
-        <div class="highlights__card">
+      @for (item of texts.highlights; track item.title; let i = $index) {
+        <div class="highlights__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
           <div class="highlights__icon">
             @switch (item.icon) {
               @case ('fire') {
@@ -56,12 +60,12 @@
 <!-- CTA Commander -->
 <section class="cta section">
   <div class="container cta__inner">
-    <h2 class="cta__title">{{ texts.ctaTitle }}</h2>
-    <p class="cta__text">{{ texts.ctaText }}</p>
-    <a [href]="'tel:' + phone" class="btn btn--primary btn--lg">
+    <h2 class="cta__title" appReveal="zoom">{{ texts.ctaTitle }}</h2>
+    <p class="cta__text" appReveal="fade-up" [revealDelay]="200">{{ texts.ctaText }}</p>
+    <a [href]="'tel:' + phone" class="btn btn--primary btn--lg pulse-soft" appReveal="fade-up" [revealDelay]="400">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       {{ texts.ctaButton }}
     </a>
-    <span class="cta__phone">{{ phoneDisplay }}</span>
+    <span class="cta__phone" appReveal="fade" [revealDelay]="600">{{ phoneDisplay }}</span>
   </div>
 </section>

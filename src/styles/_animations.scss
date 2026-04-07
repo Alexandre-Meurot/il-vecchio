@@ -1,0 +1,168 @@
+/* ============================================
+   Animations globales — Scroll reveal & effets
+   ============================================ */
+
+/* --- Scroll reveal --- */
+
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Variantes de départ */
+  &--fade-up {
+    transform: translateY(40px);
+  }
+
+  &--fade-down {
+    transform: translateY(-40px);
+  }
+
+  &--fade-left {
+    transform: translateX(-40px);
+  }
+
+  &--fade-right {
+    transform: translateX(40px);
+  }
+
+  &--zoom {
+    transform: scale(0.9);
+  }
+
+  &--fade {
+    transform: none;
+  }
+
+  /* État visible (déclenché par IntersectionObserver) */
+  &--visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* --- Hover lift — effet de surélévation --- */
+
+.hover-lift {
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* --- Hover glow — lueur dorée au survol --- */
+
+.hover-glow {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(212, 168, 83, 0.12) 0%,
+      transparent 60%
+    );
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+/* --- Soulignement animé pour les liens --- */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--transition-normal), left var(--transition-normal);
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* --- Divider animé --- */
+
+.divider-animated {
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: var(--space-md) auto;
+  border: none;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .reveal--visible & {
+    width: 60px;
+  }
+}
+
+/* --- Shimmer — reflet qui glisse --- */
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+    animation: shimmerSlide 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes shimmerSlide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* --- Pulse doux pour les CTA --- */
+
+.pulse-soft {
+  animation: pulseSoft 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(232, 129, 59, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(232, 129, 59, 0);
+  }
+}

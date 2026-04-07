@@ -1,0 +1,52 @@
+/* En-tête de page */
+.page-header {
+  padding-top: calc(var(--space-2xl) + 60px);
+  padding-bottom: var(--space-lg);
+  text-align: center;
+
+  &__title {
+    font-size: var(--fs-h1);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__subtitle {
+    font-family: var(--font-accent), sans-serif;
+    font-style: italic;
+    font-size: var(--fs-h3);
+    color: var(--color-text-muted);
+  }
+}
+
+/* Contenu légal */
+.legal {
+  &__block {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &__heading {
+    font-size: var(--fs-h3);
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__text {
+    color: var(--color-text-muted);
+    line-height: var(--lh-relaxed);
+    white-space: pre-line;
+  }
+
+  &__update {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    font-style: italic;
+    margin-top: var(--space-lg);
+  }
+}

@@ -1,10 +1,12 @@
 <!-- En-tête de page -->
 <section class="page-header">
   <div class="container">
-    <span class="page-header__badge">{{ texts.badge }}</span>
-    <h1 class="page-header__title">{{ texts.title }}</h1>
-    <p class="page-header__subtitle">{{ texts.subtitle }}</p>
-    <hr class="divider">
+    <span class="page-header__badge" appReveal="fade" [revealDelay]="100">{{ texts.badge }}</span>
+    <h1 class="page-header__title" appReveal="fade-up" [revealDelay]="200">{{ texts.title }}</h1>
+    <p class="page-header__subtitle" appReveal="fade-up" [revealDelay]="350">{{ texts.subtitle }}</p>
+    <div appReveal="fade-up" [revealDelay]="450">
+      <hr class="divider-animated">
+    </div>
   </div>
 </section>
 
@@ -12,14 +14,14 @@
 @for (category of categories; track category.id) {
   <section class="menu-category section" [class.section--alt]="category.id === 'base-creme'" [id]="category.id">
     <div class="container">
-      <div class="menu-category__header">
+      <div class="menu-category__header" appReveal="fade-up">
         <h2 class="menu-category__title">{{ category.title }}</h2>
         <p class="menu-category__desc">{{ category.description }}</p>
       </div>
 
       <div class="menu-category__grid">
-        @for (pizza of category.pizzas; track pizza.name) {
-          <article class="pizza-card">
+        @for (pizza of category.pizzas; track pizza.name; let i = $index) {
+          <article class="pizza-card hover-glow" appReveal="fade-up" [revealDelay]="i * 80">
             <div class="pizza-card__top">
               <h3 class="pizza-card__name">{{ pizza.name }}</h3>
               <span class="pizza-card__price">{{ pizza.price }}{{ texts.priceUnit }}</span>
@@ -37,6 +39,6 @@
 <!-- Note allergènes -->
 <section class="menu-note section">
   <div class="container">
-    <p class="menu-note__text">{{ texts.note }}</p>
+    <p class="menu-note__text" appReveal="fade">{{ texts.note }}</p>
   </div>
 </section>

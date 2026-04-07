@@ -7,7 +7,7 @@
 
   &__badge {
     display: inline-block;
-    font-family: var(--font-accent);
+    font-family: var(--font-accent), sans-serif;
     font-size: var(--fs-h3);
     font-style: italic;
     color: var(--color-primary);
@@ -43,7 +43,7 @@
   }
 
   &__desc {
-    font-family: var(--font-accent);
+    font-family: var(--font-accent), sans-serif;
     font-style: italic;
     color: var(--color-text-muted);
     font-size: var(--fs-h3);
@@ -84,14 +84,14 @@
   }
 
   &__name {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading), sans-serif;
     font-size: var(--fs-h3);
     font-weight: var(--fw-semibold);
     color: var(--color-text-light);
   }
 
   &__price {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading), sans-serif;
     font-size: var(--fs-price);
     font-weight: var(--fw-bold);
     color: var(--color-primary);

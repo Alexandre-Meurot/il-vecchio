@@ -2,10 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { TEXTS } from '../../core/content/texts';
 import { MENU_DATA } from '../../core/config/menu.config';
 import { SeoService } from '../../core/services/seo.service';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
+  imports: [RevealDirective],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { TEXTS } from '../../core/content/texts';
 import { SITE_CONFIG } from '../../core/config/site.config';
 import { SeoService } from '../../core/services/seo.service';
@@ -7,7 +8,7 @@ import { SeoService } from '../../core/services/seo.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

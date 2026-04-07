@@ -3,11 +3,12 @@ import { TEXTS } from '../../core/content/texts';
 import { SITE_CONFIG } from '../../core/config/site.config';
 import { SeoService } from '../../core/services/seo.service';
 import { SafeUrlPipe } from '../../shared/pipes/safe-url.pipe';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [SafeUrlPipe],
+  imports: [SafeUrlPipe, RevealDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

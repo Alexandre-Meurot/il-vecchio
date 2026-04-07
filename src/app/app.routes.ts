@@ -24,7 +24,15 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'mentions-legales',
+    loadComponent: () =>
+      import('./pages/legal/legal.component').then((m) => m.LegalComponent),
+  },
+  {
     path: '**',
-    redirectTo: '',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
   },
 ];

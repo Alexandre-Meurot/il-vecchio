@@ -1,9 +1,11 @@
 <!-- En-tête de page -->
 <section class="page-header">
   <div class="container">
-    <h1 class="page-header__title">{{ texts.title }}</h1>
-    <p class="page-header__subtitle">{{ texts.subtitle }}</p>
-    <hr class="divider">
+    <h1 class="page-header__title" appReveal="fade-up" [revealDelay]="200">{{ texts.title }}</h1>
+    <p class="page-header__subtitle" appReveal="fade-up" [revealDelay]="350">{{ texts.subtitle }}</p>
+    <div appReveal="fade-up" [revealDelay]="450">
+      <hr class="divider-animated">
+    </div>
   </div>
 </section>
 
@@ -11,13 +13,13 @@
 <section class="story section">
   <div class="container">
     <div class="story__layout">
-      <div class="story__image-wrapper">
+      <div class="story__image-wrapper" appReveal="fade-right">
         <div class="story__image" role="img" aria-label="Préparation de pizza au feu de bois"></div>
       </div>
       <div class="story__content">
-        <h2 class="story__title">{{ texts.storyTitle }}</h2>
+        <h2 class="story__title" appReveal="fade-left">{{ texts.storyTitle }}</h2>
         @for (paragraph of texts.storyText; track $index) {
-          <p class="story__text">{{ paragraph }}</p>
+          <p class="story__text" appReveal="fade-left" [revealDelay]="$index * 150">{{ paragraph }}</p>
         }
       </div>
     </div>
@@ -27,11 +29,13 @@
 <!-- Valeurs -->
 <section class="values section section--alt">
   <div class="container">
-    <h2 class="section__title">{{ texts.valuesTitle }}</h2>
-    <hr class="divider">
+    <h2 class="section__title" appReveal="fade-up">{{ texts.valuesTitle }}</h2>
+    <div appReveal="fade-up" [revealDelay]="150">
+      <hr class="divider-animated">
+    </div>
     <div class="values__grid">
-      @for (value of texts.values; track value.title) {
-        <div class="values__card">
+      @for (value of texts.values; track value.title; let i = $index) {
+        <div class="values__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
           <h3 class="values__card-title">{{ value.title }}</h3>
           <p class="values__card-text">{{ value.text }}</p>
         </div>

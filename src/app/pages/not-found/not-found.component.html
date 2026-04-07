@@ -1,0 +1,46 @@
+<section class="not-found">
+  <!-- Pizza animée -->
+  <div class="not-found__pizza" aria-hidden="true">
+    <div class="not-found__slice">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Croûte -->
+        <path d="M100 10 L190 180 L10 180 Z" fill="var(--color-primary)" opacity="0.9"/>
+        <!-- Sauce -->
+        <path d="M100 35 L175 170 L25 170 Z" fill="var(--color-accent-red)" opacity="0.8"/>
+        <!-- Fromage fondu -->
+        <ellipse cx="80" cy="110" rx="18" ry="14" fill="var(--color-accent-cream)" opacity="0.85"/>
+        <ellipse cx="120" cy="120" rx="15" ry="12" fill="var(--color-accent-cream)" opacity="0.8"/>
+        <ellipse cx="100" cy="85" rx="14" ry="11" fill="var(--color-accent-cream)" opacity="0.9"/>
+        <!-- Pepperoni -->
+        <circle cx="75" cy="130" r="8" fill="var(--color-accent-warm)" opacity="0.9"/>
+        <circle cx="115" cy="100" r="7" fill="var(--color-accent-warm)" opacity="0.85"/>
+        <circle cx="100" cy="145" r="9" fill="var(--color-accent-warm)" opacity="0.9"/>
+        <circle cx="130" cy="145" r="6" fill="var(--color-accent-warm)" opacity="0.8"/>
+        <!-- Basilic -->
+        <ellipse cx="90" cy="100" rx="6" ry="10" fill="var(--color-success)" opacity="0.7" transform="rotate(-25 90 100)"/>
+        <ellipse cx="140" cy="135" rx="5" ry="8" fill="var(--color-success)" opacity="0.65" transform="rotate(15 140 135)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Contenu texte -->
+  <div class="not-found__content">
+    <h1 class="not-found__code">{{ texts.code }}</h1>
+    <h2 class="not-found__title">{{ texts.title }}</h2>
+    <p class="not-found__text">{{ texts.text }}</p>
+    <div class="not-found__actions">
+      <a routerLink="/" class="btn btn--primary">{{ texts.ctaHome }}</a>
+      <a routerLink="/la-carte" class="btn btn--outline">{{ texts.ctaMenu }}</a>
+    </div>
+  </div>
+
+  <!-- Particules décoratives -->
+  <div class="not-found__particles" aria-hidden="true">
+    <span class="not-found__particle"></span>
+    <span class="not-found__particle"></span>
+    <span class="not-found__particle"></span>
+    <span class="not-found__particle"></span>
+    <span class="not-found__particle"></span>
+    <span class="not-found__particle"></span>
+  </div>
+</section>
