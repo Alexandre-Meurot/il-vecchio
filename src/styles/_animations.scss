@@ -152,6 +152,30 @@
   }
 }
 
+/* --- Transitions de page (View Transitions API) --- */
+
+::view-transition-old(root) {
+  animation: pageOut 0.3s ease-in both;
+}
+
+::view-transition-new(root) {
+  animation: pageIn 0.4s ease-out both;
+}
+
+@keyframes pageOut {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
 /* --- Pulse doux pour les CTA --- */
 
 .pulse-soft {

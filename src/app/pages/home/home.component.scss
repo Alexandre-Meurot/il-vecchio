@@ -5,8 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    url('/assets/images/hero-bg.jpg') center / cover no-repeat;
+  background: url('/assets/images/hero-bg.jpg') center / cover no-repeat;
+  background: image-set(
+    url('/assets/images/hero-bg.webp') type('image/webp'),
+    url('/assets/images/hero-bg.jpg') type('image/jpeg')
+  ) center / cover no-repeat;
   overflow: hidden;
 
   &__overlay {

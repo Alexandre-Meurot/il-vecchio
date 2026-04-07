@@ -54,8 +54,11 @@
   &__image {
     width: 100%;
     aspect-ratio: 4 / 5;
-    background:
-      url('/assets/images/about-bg.jpg') center / cover no-repeat;
+    background: url('/assets/images/about-bg.jpg') center / cover no-repeat;
+    background: image-set(
+      url('/assets/images/about-bg.webp') type('image/webp'),
+      url('/assets/images/about-bg.jpg') type('image/jpeg')
+    ) center / cover no-repeat;
     background-color: var(--color-bg-card);
     border-radius: var(--radius-lg);
   }

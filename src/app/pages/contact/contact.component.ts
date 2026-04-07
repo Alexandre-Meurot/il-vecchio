@@ -8,7 +8,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [SafeUrlPipe, RevealDirective],
+  imports: [RevealDirective, SafeUrlPipe],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
