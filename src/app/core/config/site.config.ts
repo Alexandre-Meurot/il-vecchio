@@ -3,6 +3,11 @@
  * Centralise les métadonnées, coordonnées et informations SEO.
  */
 
+export interface OpeningHours {
+  days: string;
+  hours: string;
+}
+
 export const SITE_CONFIG = {
   /** Nom de l'établissement */
   name: 'Il Vecchio',
@@ -59,7 +64,7 @@ export const SITE_CONFIG = {
     { days: 'Mercredi', hours: '17h30 – 22h00' },
     { days: 'Jeudi – Samedi', hours: '17h00 – 22h00' },
     { days: 'Dimanche', hours: '17h00 – 22h00' },
-  ],
+  ] as OpeningHours[],
 
   /** Modes de paiement acceptés */
   paymentMethods: ['Carte bancaire', 'Chèque', 'Espèces'],
