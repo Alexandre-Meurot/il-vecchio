@@ -55,10 +55,10 @@ export const SITE_CONFIG = {
 
   /** Horaires d'ouverture */
   hours: [
-    { days: 'Lundi – Jeudi', hours: '18h00 – 21h30' },
-    { days: 'Vendredi', hours: '18h00 – 22h00' },
-    { days: 'Samedi', hours: '18h00 – 22h00' },
-    { days: 'Dimanche', hours: 'Fermé' },
+    { days: 'Lundi – Mardi', hours: '17h00 – 22h00' },
+    { days: 'Mercredi', hours: '17h30 – 22h00' },
+    { days: 'Jeudi – Samedi', hours: '17h00 – 22h00' },
+    { days: 'Dimanche', hours: '17h00 – 22h00' },
   ],
 
   /** Modes de paiement acceptés */
