@@ -74,13 +74,31 @@
     }
   }
 
-  &__cta {
-    font-size: var(--fs-small);
-    padding: 0.6rem 1.4rem;
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
 
     @media (max-width: 768px) {
       display: none;
     }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: #1877F2;
+    }
+  }
+
+  &__cta {
+    font-size: var(--fs-small);
+    padding: 0.6rem 1.4rem;
   }
 
   /* Hamburger */
@@ -167,5 +185,36 @@
     margin-top: var(--space-sm);
     font-family: var(--font-body) !important;
     font-size: var(--fs-body) !important;
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast),
+      color var(--transition-fast);
+
+    &:hover,
+    &.active {
+      color: var(--color-white) !important;
+      background-color: var(--color-accent-warm-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__mobile-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: #1877F2;
+    }
   }
 }

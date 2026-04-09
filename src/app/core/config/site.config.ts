@@ -69,9 +69,9 @@ export const SITE_CONFIG = {
   /** Modes de paiement acceptés */
   paymentMethods: ['Carte bancaire', 'Chèque', 'Espèces'],
 
-  /** Réseaux sociaux (à compléter si besoin) */
+  /** Réseaux sociaux */
   social: {
-    facebook: '',
+    facebook: 'https://www.facebook.com/profile.php?id=61579564966850',
     instagram: '',
   },
 
