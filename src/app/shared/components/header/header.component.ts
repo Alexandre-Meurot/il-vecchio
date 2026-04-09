@@ -15,6 +15,7 @@ export class HeaderComponent {
   readonly siteName = SITE_CONFIG.name;
   readonly phone = SITE_CONFIG.contact.phone;
   readonly phoneDisplay = SITE_CONFIG.contact.phoneDisplay;
+  readonly facebookUrl = SITE_CONFIG.social.facebook;
 
   menuOpen = signal(false);
   scrolled = signal(false);
