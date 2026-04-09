@@ -23,7 +23,14 @@
         @for (pizza of category.pizzas; track pizza.name; let i = $index) {
           <article class="pizza-card hover-glow" appReveal="fade-up" [revealDelay]="i * 80">
             <div class="pizza-card__top">
-              <h3 class="pizza-card__name">{{ pizza.name }}</h3>
+              <div class="pizza-card__name-wrap">
+                <h3 class="pizza-card__name">{{ pizza.name }}</h3>
+                @if (pizza.vegetarian) {
+                  <span class="pizza-card__veggie" [attr.title]="texts.vegetarianLabel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                  </span>
+                }
+              </div>
               <span class="pizza-card__price">{{ pizza.price }}{{ texts.priceUnit }}</span>
             </div>
             <p class="pizza-card__ingredients">
@@ -36,9 +43,15 @@
   </section>
 }
 
-<!-- Note allergènes -->
+<!-- Légende & note -->
 <section class="menu-note section">
   <div class="container">
+    <div class="menu-legend" appReveal="fade">
+      <span class="menu-legend__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        {{ texts.vegetarianLabel }}
+      </span>
+    </div>
     <p class="menu-note__text" appReveal="fade">{{ texts.note }}</p>
   </div>
 </section>

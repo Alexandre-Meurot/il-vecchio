@@ -56,6 +56,8 @@ export const TEXTS = {
     subtitle: 'Toutes nos pizzas sont faites maison, cuites au feu de bois',
     badge: 'À emporter',
     priceUnit: '€',
+    vegetarianLabel: 'Végétarienne',
+    legendTitle: 'Légende',
     note: 'Tous nos produits peuvent contenir des allergènes. N\'hésitez pas à nous consulter.',
   },
 
