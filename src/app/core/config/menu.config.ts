@@ -7,6 +7,7 @@ export interface Pizza {
   name: string;
   price: number;
   ingredients: string[];
+  vegetarian?: boolean;
 }
 
 export interface MenuCategory {
@@ -26,6 +27,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: 'Margarita',
         price: 10,
         ingredients: ['Tomate', 'Mozzarella', 'Basilic'],
+        vegetarian: true,
       },
       {
         name: 'Diavola',
@@ -41,6 +43,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: '3 Fromages',
         price: 13,
         ingredients: ['Tomate', 'Basilic', 'Chèvre', 'Bleu', 'Tome de vache'],
+        vegetarian: true,
       },
       {
         name: 'Regina',
@@ -56,6 +59,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: 'Chèvre Miel',
         price: 12,
         ingredients: ['Tomate', 'Chèvre', 'Miel'],
+        vegetarian: true,
       },
       {
         name: 'Orientale',
@@ -66,6 +70,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: 'Mariana',
         price: 7,
         ingredients: ['Tomate', 'Origan', 'Ail'],
+        vegetarian: true,
       },
     ],
   },
@@ -88,6 +93,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: '3 Fromages',
         price: 12,
         ingredients: ['Crème', 'Chèvre', 'Bleu', 'Tome de vache'],
+        vegetarian: true,
       },
       {
         name: 'Savoyarde',
@@ -104,6 +110,7 @@ export const MENU_DATA: MenuCategory[] = [
         name: 'Chèvre Miel',
         price: 12,
         ingredients: ['Crème', 'Chèvre frais', 'Miel'],
+        vegetarian: true,
       },
     ],
   },

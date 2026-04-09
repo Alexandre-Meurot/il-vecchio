@@ -83,11 +83,23 @@
     margin-bottom: var(--space-xs);
   }
 
+  &__name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
   &__name {
     font-family: var(--font-heading), sans-serif;
     font-size: var(--fs-h3);
     font-weight: var(--fw-semibold);
     color: var(--color-text-light);
+  }
+
+  &__veggie {
+    display: inline-flex;
+    color: var(--color-success);
+    flex-shrink: 0;
   }
 
   &__price {
@@ -102,6 +114,23 @@
     font-size: var(--fs-small);
     color: var(--color-text-muted);
     line-height: var(--lh-relaxed);
+  }
+}
+
+/* Légende */
+.menu-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-success);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
   }
 }
 
