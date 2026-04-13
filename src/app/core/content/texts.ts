@@ -128,7 +128,7 @@ export const TEXTS = {
 
     editorTitle: 'Éditeur du site',
     editorText:
-      'Le site il-vecchio.fr est édité par Il Vecchio, pizzeria artisanale.\n' +
+      'Le site pizzeria-il-vecchio.fr est édité par Il Vecchio, pizzeria artisanale.\n' +
       'Adresse : 6 rue du 14 Juillet, 12110 Cransac-les-Thermes, France.\n' +
       'Téléphone : 06 28 63 95 88.',
 
@@ -169,7 +169,7 @@ export const TEXTS = {
 
     cguTitle: 'Conditions générales d\'utilisation',
     cguText:
-      'L\'utilisation du site il-vecchio.fr implique l\'acceptation pleine et entière ' +
+      'L\'utilisation du site pizzeria-il-vecchio.fr implique l\'acceptation pleine et entière ' +
       'des conditions générales d\'utilisation décrites ci-dessous. Ces conditions sont ' +
       'susceptibles d\'être modifiées à tout moment. L\'utilisateur est invité à les consulter ' +
       'régulièrement. Ce site est accessible gratuitement à tout utilisateur disposant d\'un ' +
@@ -177,7 +177,7 @@ export const TEXTS = {
 
     applicableLawTitle: 'Droit applicable',
     applicableLawText:
-      'Tout litige en relation avec l\'utilisation du site il-vecchio.fr est soumis au droit français. ' +
+      'Tout litige en relation avec l\'utilisation du site pizzeria-il-vecchio.fr est soumis au droit français. ' +
       'Il est fait attribution exclusive de juridiction aux tribunaux compétents de Rodez.',
 
     lastUpdate: 'Dernière mise à jour : avril 2026',
