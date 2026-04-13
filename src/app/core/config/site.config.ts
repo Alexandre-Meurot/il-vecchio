@@ -33,7 +33,7 @@ export const SITE_CONFIG = {
   ],
 
   /** URL canonique du site (à adapter au déploiement) */
-  url: 'https://il-vecchio.fr',
+  url: 'https://pizzeria-il-vecchio.fr',
 
   /** Langue du site */
   lang: 'fr',

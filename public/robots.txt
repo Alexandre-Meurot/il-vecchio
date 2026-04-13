@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://il-vecchio.fr/sitemap.xml
+Sitemap: https://pizzeria-il-vecchio.fr/sitemap.xml
