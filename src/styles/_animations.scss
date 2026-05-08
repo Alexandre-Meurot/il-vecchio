@@ -117,6 +117,12 @@
   .reveal--visible & {
     width: 60px;
   }
+
+  /* Variante alignée à gauche (layout 2 colonnes) */
+  &--left {
+    margin-inline: 0 auto;
+    margin-block: var(--space-sm) var(--space-md);
+  }
 }
 
 /* --- Shimmer — reflet qui glisse --- */

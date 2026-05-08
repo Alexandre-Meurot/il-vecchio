@@ -57,6 +57,28 @@
   </div>
 </section>
 
+<!-- Teaser Bar & Terrasse -->
+<section class="terrace section">
+  <div class="container">
+    <div class="terrace__layout">
+      <div class="terrace__image-wrapper" appReveal="fade-right">
+        <div class="terrace__image" role="img" [attr.aria-label]="texts.terraceImageAlt"></div>
+      </div>
+      <div class="terrace__content">
+        <span class="terrace__eyebrow" appReveal="fade-left">{{ texts.terraceEyebrow }}</span>
+        <h2 class="terrace__title" appReveal="fade-left" [revealDelay]="150">{{ texts.terraceTitle }}</h2>
+        <div appReveal="fade-left" [revealDelay]="250">
+          <hr class="divider-animated divider-animated--left">
+        </div>
+        <p class="terrace__text" appReveal="fade-left" [revealDelay]="350">{{ texts.terraceText }}</p>
+        <div class="terrace__actions" appReveal="fade-up" [revealDelay]="500">
+          <a routerLink="/bar-terrasse" class="btn btn--primary">{{ texts.terraceCta }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA Commander -->
 <section class="cta section">
   <div class="container cta__inner">

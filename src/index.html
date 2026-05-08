@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Il Vecchio — Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, farine locale du Moulin Castanié, produits bio et locaux. À emporter."
+      content="Il Vecchio — Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, farine locale du Moulin Castanié, produits bio et locaux. À emporter ou sur place."
     />
     <meta
       name="keywords"
@@ -24,7 +24,7 @@
     <meta property="og:title" content="Il Vecchio — Pizza artisanale au feu de bois" />
     <meta
       property="og:description"
-      content="Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, produits bio et locaux."
+      content="Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, produits bio et locaux. À emporter ou sur place."
     />
     <meta property="og:url" content="https://pizzeria-il-vecchio.fr" />
     <meta property="og:image" content="https://pizzeria-il-vecchio.fr/assets/images/og-cover.jpg" />
@@ -36,7 +36,7 @@
     <meta name="twitter:title" content="Il Vecchio — Pizza artisanale au feu de bois" />
     <meta
       name="twitter:description"
-      content="Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, produits bio et locaux."
+      content="Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, produits bio et locaux. À emporter ou sur place."
     />
     <meta name="twitter:image" content="https://pizzeria-il-vecchio.fr/assets/images/og-cover.jpg" />
 
@@ -62,12 +62,15 @@
       {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://pizzeria-il-vecchio.fr/#restaurant",
         "name": "Il Vecchio",
         "description": "Pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois avec farine locale et produits bio.",
         "url": "https://pizzeria-il-vecchio.fr",
         "telephone": "+33628639588",
-        "servesCuisine": "Pizza",
+        "image": "https://pizzeria-il-vecchio.fr/assets/images/og-cover.jpg",
+        "servesCuisine": ["Pizza", "Italienne"],
         "priceRange": "€",
+        "hasMenu": "https://pizzeria-il-vecchio.fr/la-carte",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "6 rue du 14 Juillet",
@@ -96,6 +99,7 @@
         ],
         "paymentAccepted": "Cash, Credit Card, Check",
         "currenciesAccepted": "EUR",
+        "acceptsReservations": "True",
         "sameAs": ["https://www.facebook.com/profile.php?id=61579564966850"]
       }
     </script>
