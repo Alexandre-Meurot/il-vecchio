@@ -12,6 +12,13 @@ export const routes: Routes = [
       import('./pages/menu/menu.component').then((m) => m.MenuComponent),
   },
   {
+    path: 'bar-terrasse',
+    loadComponent: () =>
+      import('./pages/bar-terrace/bar-terrace.component').then(
+        (m) => m.BarTerraceComponent
+      ),
+  },
+  {
     path: 'notre-histoire',
     loadComponent: () =>
       import('./pages/about/about.component').then((m) => m.AboutComponent),

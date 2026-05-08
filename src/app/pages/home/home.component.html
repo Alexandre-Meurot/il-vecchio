@@ -1,7 +1,8 @@
 <!-- Héro plein écran -->
 <section class="hero">
+  <div class="hero__bg" [appParallax]="0.15" [appDarkenOnScroll]="0.6" [minBrightness]="0.25"></div>
   <div class="hero__overlay"></div>
-  <div class="hero__content container">
+  <div class="hero__content container" [appFadeOnScroll]="0.3" [fadeTranslateY]="60">
     <span class="hero__badge" appReveal="fade" [revealDelay]="200">Pizza artisanale au feu de bois</span>
     <h1 class="hero__title" appReveal="fade-up" [revealDelay]="400">{{ texts.heroTitle }}</h1>
     <p class="hero__subtitle" appReveal="fade-up" [revealDelay]="600">{{ texts.heroSubtitle }}</p>
@@ -35,7 +36,7 @@
     </div>
     <div class="highlights__grid">
       @for (item of texts.highlights; track item.title; let i = $index) {
-        <div class="highlights__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
+        <div class="highlights__card hover-glow glow-warm" appReveal="fade-up" [revealDelay]="i * 150">
           <div class="highlights__icon">
             @switch (item.icon) {
               @case ('fire') {
@@ -53,6 +54,28 @@
           <p class="highlights__text">{{ item.text }}</p>
         </div>
       }
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Bar & Terrasse -->
+<section class="terrace section">
+  <div class="container">
+    <div class="terrace__layout">
+      <div class="terrace__image-wrapper" appReveal="fade-right">
+        <div class="terrace__image" role="img" [attr.aria-label]="texts.terraceImageAlt"></div>
+      </div>
+      <div class="terrace__content">
+        <span class="terrace__eyebrow" appReveal="fade-left">{{ texts.terraceEyebrow }}</span>
+        <h2 class="terrace__title" appReveal="fade-left" [revealDelay]="150">{{ texts.terraceTitle }}</h2>
+        <div appReveal="fade-left" [revealDelay]="250">
+          <hr class="divider-animated divider-animated--left">
+        </div>
+        <p class="terrace__text" appReveal="fade-left" [revealDelay]="350">{{ texts.terraceText }}</p>
+        <div class="terrace__actions" appReveal="fade-up" [revealDelay]="500">
+          <a routerLink="/bar-terrasse" class="btn btn--primary">{{ texts.terraceCta }}</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

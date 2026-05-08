@@ -1,0 +1,101 @@
+<!-- En-tête de page -->
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title" appReveal="fade-up" [revealDelay]="200">{{ texts.title }}</h1>
+    <p class="page-header__subtitle" appReveal="fade-up" [revealDelay]="350">{{ texts.subtitle }}</p>
+    <div appReveal="fade-up" [revealDelay]="450">
+      <hr class="divider-animated">
+    </div>
+  </div>
+</section>
+
+<!-- Présentation + image -->
+<section class="presentation section">
+  <div class="container">
+    <div class="presentation__layout">
+      <div class="presentation__image-wrapper" appReveal="fade-right">
+        <div class="presentation__image" role="img" [attr.aria-label]="texts.imageAlt"></div>
+      </div>
+      <div class="presentation__content">
+        <h2 class="presentation__title" appReveal="fade-left">{{ texts.introTitle }}</h2>
+        <div appReveal="fade-left" [revealDelay]="150">
+          <hr class="divider-animated divider-animated--left">
+        </div>
+        @for (paragraph of texts.introText; track $index) {
+          <p class="presentation__text" appReveal="fade-left" [revealDelay]="250 + $index * 150">{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pourquoi venir sur place -->
+<section class="ambience section section--alt">
+  <div class="container">
+    <h2 class="section__title" appReveal="fade-up">{{ texts.ambienceTitle }}</h2>
+    <div appReveal="fade-up" [revealDelay]="150">
+      <hr class="divider-animated">
+    </div>
+    <div class="ambience__grid">
+      @for (item of texts.ambience; track item.title; let i = $index) {
+        <div class="ambience__card hover-glow glow-warm" appReveal="fade-up" [revealDelay]="i * 150">
+          <div class="ambience__icon">
+            @switch (item.icon) {
+              @case ('sun') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+              }
+              @case ('glass') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5V3H7v7a5 5 0 0 0 5 5Z"/></svg>
+              }
+              @case ('people') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              }
+            }
+          </div>
+          <h3 class="ambience__title">{{ item.title }}</h3>
+          <p class="ambience__text">{{ item.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Carte des boissons -->
+<section class="drinks-page section">
+  <div class="container">
+    <h2 class="section__title" appReveal="fade-up">{{ texts.drinksTitle }}</h2>
+    <p class="section__subtitle" appReveal="fade-up" [revealDelay]="150">{{ texts.drinksSubtitle }}</p>
+    <div appReveal="fade-up" [revealDelay]="200">
+      <hr class="divider-animated">
+    </div>
+    <div class="drinks-page__grid">
+      @for (group of texts.drinks; track group.category; let i = $index) {
+        <article class="drinks-page__card hover-glow" appReveal="fade-up" [revealDelay]="i * 120">
+          <header class="drinks-page__header">
+            <h3 class="drinks-page__category">{{ group.category }}</h3>
+            <p class="drinks-page__description">{{ group.description }}</p>
+          </header>
+          <ul class="drinks-page__list">
+            @for (item of group.items; track item) {
+              <li class="drinks-page__item">{{ item }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Réservation -->
+<section class="reservation section section--alt">
+  <div class="container reservation__inner">
+    <h2 class="reservation__title" appReveal="zoom">{{ texts.reservationTitle }}</h2>
+    <p class="reservation__text" appReveal="fade-up" [revealDelay]="200">{{ texts.reservationText }}</p>
+    <a [href]="'tel:' + phone" class="btn btn--primary btn--lg pulse-soft" appReveal="fade-up" [revealDelay]="400">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      {{ texts.reservationButton }}
+    </a>
+    <span class="reservation__phone" appReveal="fade" [revealDelay]="600">{{ phoneDisplay }}</span>
+    <p class="reservation__note" appReveal="fade" [revealDelay]="700">{{ texts.reservationNote }}</p>
+  </div>
+</section>

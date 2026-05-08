@@ -117,38 +117,92 @@
   .reveal--visible & {
     width: 60px;
   }
+
+  /* Variante alignée à gauche (layout 2 colonnes) */
+  &--left {
+    margin-inline: 0 auto;
+    margin-block: var(--space-sm) var(--space-md);
+  }
 }
 
-/* --- Shimmer — reflet qui glisse --- */
+/* --- Glow chaud — lueur de braises (cartes) ---
+   Halo doré qui flotte doucement dans le coin haut-gauche de la carte,
+   avec des variations d'intensité, de position et d'échelle pour évoquer
+   la chaleur d'un feu de bois plutôt qu'un état de chargement. */
 
-.shimmer {
+.glow-warm {
   position: relative;
   overflow: hidden;
 
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.06),
-      transparent
-    );
-    animation: shimmerSlide 3s ease-in-out infinite;
+    /* Le pseudo déborde de 25% au-delà des bords de la carte. Combiné à
+       `overflow: hidden` sur le parent, le bord du gradient (où l'alpha
+       atteint 0) est toujours hors-écran : aucune délimitation visible. */
+    inset: -25%;
     pointer-events: none;
+    background: radial-gradient(
+      ellipse at 35% 20%,
+      rgba(212, 168, 83, 0.10) 0%,
+      rgba(212, 168, 83, 0.06) 25%,
+      rgba(212, 168, 83, 0.03) 50%,
+      rgba(212, 168, 83, 0.01) 75%,
+      transparent 100%
+    );
+    transform-origin: 35% 20%;
+    animation: emberFlicker 9s ease-in-out infinite;
+  }
+
+  /* Décale phases ET durées entre cartes (durées coprimes 9/11/7.5) */
+  &:nth-child(2n)::after {
+    animation-delay: -2.7s;
+    animation-duration: 11s;
+  }
+  &:nth-child(3n)::after {
+    animation-delay: -5.5s;
+    animation-duration: 7.5s;
   }
 }
 
-@keyframes shimmerSlide {
+/* Six keyframes asymétriques avec mouvement bidirectionnel + variation de
+   taille. La lueur "danse" comme une braise active, sans rythme perceptible. */
+@keyframes emberFlicker {
   0% {
-    left: -100%;
+    opacity: 0.4;
+    transform: translate(-4%, 0%) scale(1);
+  }
+  16% {
+    opacity: 0.8;
+    transform: translate(2%, 1%) scale(1.08);
+  }
+  31% {
+    opacity: 0.55;
+    transform: translate(6%, -1%) scale(1.03);
+  }
+  47% {
+    opacity: 1;
+    transform: translate(3%, 2%) scale(1.12);
+  }
+  62% {
+    opacity: 0.65;
+    transform: translate(-3%, 0%) scale(1.05);
+  }
+  78% {
+    opacity: 0.95;
+    transform: translate(1%, -2%) scale(1.10);
   }
   100% {
-    left: 200%;
+    opacity: 0.4;
+    transform: translate(-4%, 0%) scale(1);
+  }
+}
+
+/* Respect des préférences d'accessibilité — figer l'animation si demandé */
+@media (prefers-reduced-motion: reduce) {
+  .glow-warm::after {
+    animation: none;
+    opacity: 0.7;
   }
 }
 

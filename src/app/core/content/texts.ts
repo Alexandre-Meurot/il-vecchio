@@ -8,6 +8,7 @@ export const TEXTS = {
   nav: {
     home: 'Accueil',
     menu: 'La Carte',
+    barTerrace: 'Bar & Terrasse',
     about: 'Notre Histoire',
     contact: 'Contact',
     cta: 'Commander',
@@ -48,6 +49,86 @@ export const TEXTS = {
     ctaTitle: 'Envie d\'une pizza ?',
     ctaText: 'Passez commande par téléphone et récupérez votre pizza toute chaude.',
     ctaButton: 'Appeler maintenant',
+
+    /** Section teaser — Bar & Terrasse */
+    terraceEyebrow: 'Sur place',
+    terraceTitle: 'Bar & Terrasse',
+    terraceText:
+      'Installez-vous sous nos guirlandes lumineuses et savourez votre pizza tout juste sortie ' +
+      'du four à bois, accompagnée d\'un bon verre de vin ou d\'une boisson artisanale. ' +
+      'Une parenthèse conviviale au cœur de Cransac-les-Thermes.',
+    terraceImageAlt: 'Terrasse de la pizzeria Il Vecchio à la tombée du jour',
+    terraceCta: 'Découvrir le bar & la terrasse',
+  },
+
+  /** Page Bar & Terrasse */
+  barTerrace: {
+    title: 'Bar & Terrasse',
+    subtitle: 'Dégustez sur place dans une ambiance conviviale',
+
+    introTitle: 'Une parenthèse au cœur de Cransac',
+    introText: [
+      'Notre terrasse vous accueille dans une ambiance chaleureuse, à la lumière des ' +
+      'guirlandes et au coucher du soleil. Que ce soit pour partager une pizza entre amis, ' +
+      'profiter d\'un apéritif ou simplement boire un verre, c\'est l\'endroit idéal pour ' +
+      'faire une pause conviviale.',
+
+      'Toutes nos pizzas, préparées à la main et cuites au feu de bois, sont également ' +
+      'disponibles à la dégustation sur place — accompagnées d\'une sélection de vins, ' +
+      'boissons artisanales, bières et cafés.',
+    ],
+    imageAlt: 'Terrasse de la pizzeria Il Vecchio à la tombée du jour',
+
+    drinksTitle: 'Notre carte des boissons',
+    drinksSubtitle: 'Une sélection sobre et soignée pour accompagner vos pizzas',
+    drinks: [
+      {
+        category: 'Vins',
+        description: 'Au verre ou en pichet',
+        items: ['Rosé', 'Rouge', 'Blanc'],
+      },
+      {
+        category: 'Bières',
+        description: 'Pression et bouteilles',
+        items: ['Bière blonde', 'Bière ambrée', 'Bière artisanale'],
+      },
+      {
+        category: 'Boissons artisanales',
+        description: 'Producteurs locaux',
+        items: ['Limonade', 'Jus de pomme & poire', 'Cola'],
+      },
+      {
+        category: 'Cafés & chauds',
+        description: 'Pour terminer le repas',
+        items: ['Café', 'Café allongé', 'Thé / Infusion'],
+      },
+    ],
+
+    ambienceTitle: 'Pourquoi venir sur place ?',
+    ambience: [
+      {
+        icon: 'sun',
+        title: 'Cadre chaleureux',
+        text: 'Une terrasse extérieure aux lumières tamisées, parfaite pour un moment détendu.',
+      },
+      {
+        icon: 'glass',
+        title: 'Pizzas + boissons',
+        text: 'Toute la carte est disponible sur place, accompagnée de nos vins et boissons artisanales.',
+      },
+      {
+        icon: 'people',
+        title: 'Entre amis ou en famille',
+        text: 'L\'endroit idéal pour partager un repas convivial à Cransac-les-Thermes.',
+      },
+    ],
+
+    reservationTitle: 'Réservez votre table',
+    reservationText:
+      'Pour garantir votre table, surtout en soirée et le week-end, nous vous invitons ' +
+      'à nous appeler pour réserver. Le nombre de places en terrasse est limité.',
+    reservationButton: 'Réserver par téléphone',
+    reservationNote: 'Réservation uniquement par téléphone',
   },
 
   /** Page Menu / La Carte */
@@ -134,9 +215,10 @@ export const TEXTS = {
 
     hostingTitle: 'Hébergement',
     hostingText:
-      'Le site est hébergé par [Nom de l\'hébergeur], ' +
-      '[Adresse de l\'hébergeur]. ' +
-      'Téléphone : [Téléphone de l\'hébergeur].',
+      'Le site est hébergé par Vercel Inc.\n' +
+      'Adresse : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.\n' +
+      'Site web : https://vercel.com\n' +
+      'Contact : https://vercel.com/contact',
 
     intellectualPropertyTitle: 'Propriété intellectuelle',
     intellectualPropertyText:
@@ -180,7 +262,7 @@ export const TEXTS = {
       'Tout litige en relation avec l\'utilisation du site pizzeria-il-vecchio.fr est soumis au droit français. ' +
       'Il est fait attribution exclusive de juridiction aux tribunaux compétents de Rodez.',
 
-    lastUpdate: 'Dernière mise à jour : avril 2026',
+    lastUpdate: 'Dernière mise à jour : mai 2026',
   },
 
   /** Footer */
@@ -194,13 +276,16 @@ export const TEXTS = {
   seo: {
     homeTitle: 'Il Vecchio — Pizza artisanale au feu de bois | Cransac-les-Thermes',
     menuTitle: 'La Carte — Nos Pizzas | Il Vecchio',
+    barTerraceTitle: 'Bar & Terrasse — Dégustez sur place | Il Vecchio Cransac',
     aboutTitle: 'Notre Histoire | Il Vecchio — Pizzeria artisanale',
     contactTitle: 'Contact & Horaires | Il Vecchio — Cransac-les-Thermes',
 
     homeDescription:
-      'Il Vecchio, pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, farine locale du Moulin Castanié, produits bio et locaux. À emporter.',
+      'Il Vecchio, pizzeria artisanale à Cransac-les-Thermes. Pizzas cuites au feu de bois, farine locale du Moulin Castanié, produits bio et locaux. À emporter ou sur place.',
     menuDescription:
       'Découvrez notre carte de pizzas artisanales : bases tomate et crème, ingrédients locaux et bio. À emporter à Cransac-les-Thermes.',
+    barTerraceDescription:
+      'Dégustez vos pizzas sur la terrasse d\'Il Vecchio à Cransac-les-Thermes. Vins, bières, boissons artisanales et café. Réservation par téléphone.',
     aboutDescription:
       'Découvrez l\'histoire d\'Il Vecchio, pizzeria artisanale à Cransac-les-Thermes. Farine locale, produits bio, cuisson au feu de bois.',
     contactDescription:

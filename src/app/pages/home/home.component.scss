@@ -5,12 +5,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/assets/images/hero-bg.jpg') center / cover no-repeat;
-  background: image-set(
-    url('/assets/images/hero-bg.webp') type('image/webp'),
-    url('/assets/images/hero-bg.jpg') type('image/jpeg')
-  ) center / cover no-repeat;
   overflow: hidden;
+
+  /* Image de fond extraite du conteneur pour être translatée par
+     la directive `appParallax`. La translation au scroll est inférieure
+     au scroll naturel, donc le fond couvre toujours la portion visible
+     du hero — aucun bord vide à afficher. */
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: url('/assets/images/hero-bg.jpg') center / cover no-repeat;
+    background: image-set(
+      url('/assets/images/hero-bg.webp') type('image/webp'),
+      url('/assets/images/hero-bg.jpg') type('image/jpeg')
+    ) center / cover no-repeat;
+  }
 
   &__overlay {
     position: absolute;
@@ -169,6 +178,93 @@
   }
 }
 
+/* Teaser Bar & Terrasse */
+.terrace {
+  background-color: var(--color-bg-section);
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+      pointer-events: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    background: url('/assets/images/terrasse.jpg') center / cover no-repeat;
+    background: image-set(
+      url('/assets/images/terrasse.webp') type('image/webp'),
+      url('/assets/images/terrasse.jpg') type('image/jpeg')
+    ) center / cover no-repeat;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-slow);
+  }
+
+  &__image-wrapper:hover &__image {
+    transform: scale(1.04);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: var(--fs-h3);
+    color: var(--color-primary-light);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__title {
+    font-size: var(--fs-h2);
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__text {
+    color: var(--color-text-muted);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-md);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+}
+
 /* CTA Commander */
 .cta {
   &__inner {
@@ -197,9 +293,4 @@
     color: var(--color-text-light);
     letter-spacing: 0.05em;
   }
-}
-
-.btn--lg {
-  padding: 1rem 2.5rem;
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
 }
