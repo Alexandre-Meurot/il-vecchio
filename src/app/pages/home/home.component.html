@@ -35,7 +35,7 @@
     </div>
     <div class="highlights__grid">
       @for (item of texts.highlights; track item.title; let i = $index) {
-        <div class="highlights__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
+        <div class="highlights__card hover-glow glow-warm" appReveal="fade-up" [revealDelay]="i * 150">
           <div class="highlights__icon">
             @switch (item.icon) {
               @case ('fire') {

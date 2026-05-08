@@ -35,7 +35,7 @@
     </div>
     <div class="values__grid">
       @for (value of texts.values; track value.title; let i = $index) {
-        <div class="values__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
+        <div class="values__card hover-glow glow-warm" appReveal="fade-up" [revealDelay]="i * 150">
           <h3 class="values__card-title">{{ value.title }}</h3>
           <p class="values__card-text">{{ value.text }}</p>
         </div>

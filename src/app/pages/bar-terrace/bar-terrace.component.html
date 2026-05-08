@@ -38,7 +38,7 @@
     </div>
     <div class="ambience__grid">
       @for (item of texts.ambience; track item.title; let i = $index) {
-        <div class="ambience__card hover-glow shimmer" appReveal="fade-up" [revealDelay]="i * 150">
+        <div class="ambience__card hover-glow glow-warm" appReveal="fade-up" [revealDelay]="i * 150">
           <div class="ambience__icon">
             @switch (item.icon) {
               @case ('sun') {
