@@ -5,12 +5,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/assets/images/hero-bg.jpg') center / cover no-repeat;
-  background: image-set(
-    url('/assets/images/hero-bg.webp') type('image/webp'),
-    url('/assets/images/hero-bg.jpg') type('image/jpeg')
-  ) center / cover no-repeat;
   overflow: hidden;
+
+  /* Image de fond extraite du conteneur pour être translatée par
+     la directive `appParallax`. La translation au scroll est inférieure
+     au scroll naturel, donc le fond couvre toujours la portion visible
+     du hero — aucun bord vide à afficher. */
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: url('/assets/images/hero-bg.jpg') center / cover no-repeat;
+    background: image-set(
+      url('/assets/images/hero-bg.webp') type('image/webp'),
+      url('/assets/images/hero-bg.jpg') type('image/jpeg')
+    ) center / cover no-repeat;
+  }
 
   &__overlay {
     position: absolute;

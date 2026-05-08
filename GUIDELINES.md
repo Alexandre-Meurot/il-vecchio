@@ -27,7 +27,11 @@ src/
 │   │   │   ├── footer/                # Pied de page
 │   │   │   └── fab-call/              # Bouton flottant d'appel (mobile)
 │   │   ├── directives/
-│   │   │   └── reveal.directive.ts    # Animation au scroll (IntersectionObserver)
+│   │   │   ├── reveal.directive.ts            # Animation au scroll (IntersectionObserver)
+│   │   │   ├── scroll-effect.base.ts          # Squelette commun aux directives scroll
+│   │   │   ├── parallax.directive.ts          # Effet parallax vertical au scroll
+│   │   │   ├── fade-on-scroll.directive.ts    # Fondu (+ translation) au scroll
+│   │   │   └── darken-on-scroll.directive.ts  # Assombrissement progressif au scroll
 │   │   └── pipes/
 │   │       └── safe-url.pipe.ts       # Pipe pour URLs sécurisées (iframe)
 │   │
